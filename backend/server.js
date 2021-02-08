@@ -85,6 +85,6 @@ io.on("connection", socket => {
 
 app.use(express.static("build"));
 app.use("/kitchen", express.static("build"));
-app.use("/updatepredicted", express.static("build"));
+app.use("/updatePredicted", express.static("build"));
 
 server.listen(port, () => console.log(`Listening on port ${port}`));

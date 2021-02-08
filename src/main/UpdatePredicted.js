@@ -15,15 +15,15 @@ class UpdatePredicted extends Component {
   };
 
   componentDidMount() {
-    var state_current = this;
+    let state_current = this;
     socket.emit("initial_data");
     socket.on("get_data", this.getData);
   }
 
   sendPredQty = id => {
-    var predicted_details;
+    let predicted_details;
     this.state.food_data.map(food => {
-      if (food._id == id) {
+      if (food._id === id) {
         predicted_details = food;
       }
       return food;
@@ -36,8 +36,8 @@ class UpdatePredicted extends Component {
     if (parseInt(event.target.value) < 0) {
       event.target.value = 0;
     }
-    var new_array = this.state.food_data.map(food => {
-      if (food._id == foodid) {
+    let new_array = this.state.food_data.map(food => {
+      if (food._id === foodid) {
         food.predQty = parseInt(event.target.value);
       }
       return food;

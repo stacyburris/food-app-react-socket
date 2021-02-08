@@ -9,10 +9,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 /* Router components expects to only contain one child component that's why combining everything in App and importing the same */
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 

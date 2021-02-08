@@ -19,7 +19,7 @@ class PlaceOrder extends Component {
   };
   componentDidMount() {
     socket.emit("initial_data");
-    var state_current = this;
+    let state_current = this;
     socket.on("get_data", state_current.getData);
   }
   componentWillUnmount() {
@@ -27,16 +27,16 @@ class PlaceOrder extends Component {
   }
   //Function to place the order.
   sendOrder = id => {
-    var order_details;
+    let order_details;
     this.state.food_data.map(food => {
-      if (food._id == id) {
+      if (food._id === id) {
         order_details = food;
       }
       return food;
     });
     console.log(order_details);
     socket.emit("putOrder", order_details);
-    var new_array = this.state.food_data.map(food => {
+    let new_array = this.state.food_data.map(food => {
       food.order = 0;
       return food;
     });
@@ -47,8 +47,8 @@ class PlaceOrder extends Component {
     if (parseInt(event.target.value) < 0) {
       event.target.value = 0;
     }
-    var new_array = this.state.food_data.map(food => {
-      if (food._id == foodid) {
+    let new_array = this.state.food_data.map(food => {
+      if (food._id === foodid) {
         food.order = parseInt(event.target.value);
       }
       return food;

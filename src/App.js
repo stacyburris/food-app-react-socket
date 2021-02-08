@@ -15,7 +15,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={PlaceOrder} />
-          <Route path="/updatepredicted" component={UpdatePredicted} />
+          <Route path="/updatePredicted" component={UpdatePredicted} />
           <Route path="/kitchen" component={Kitchen} />
         </Switch>
       </div>

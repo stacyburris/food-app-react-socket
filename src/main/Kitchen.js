@@ -18,7 +18,7 @@ class Kitchen extends Component {
   /*As soon as the component gets mounted ie in componentDidMount method, firing the initial_data event to get the data to initialize the Kitchen Dashboard */
   /* Adding change_data listener for listening to any changes made by Place Order and Predicted Order components*/
   componentDidMount() {
-    var state_current = this;
+    let state_current = this;
     socket.emit("initial_data");
     socket.on("get_data", this.getData);
     socket.on("change_data", this.changeData);
